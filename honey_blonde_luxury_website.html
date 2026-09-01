@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Honey Blonde Hair Company | Luxury Hair Salon</title>
+<meta name="description" content="The Honey Blonde Hair Company — luxury hair and beauty salon in New Castle, Indiana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#050505;--ink:#0b0b0b;--cream:#f5f2eb;--gold:#d9bd73;
+  --muted:#a6a39d;--line:rgba(255,255,255,.13)
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--cream);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,90%);margin:auto}
+.top-glow{position:fixed;pointer-events:none;z-index:20;top:-250px;right:-120px;width:650px;height:450px;background:radial-gradient(ellipse,rgba(255,255,255,.18),transparent 68%);filter:blur(35px)}
+header{position:fixed;z-index:100;top:0;width:100%;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(5,5,5,.64);backdrop-filter:blur(18px)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:"Cormorant Garamond",serif;font-size:24px;letter-spacing:2px;line-height:.8}
+.brand small{display:block;font:8px "DM Sans";letter-spacing:4px;color:var(--gold);margin-top:9px}
+nav{display:flex;gap:31px;font-size:11px;letter-spacing:2px;color:#d6d3cd}
+nav a:hover{color:var(--gold)}
+.nav-btn,.hero-btn{padding:13px 20px;border:1px solid var(--gold);background:var(--gold);color:#0a0a0a;font-size:10px;font-weight:600;letter-spacing:2px;transition:.3s}
+.nav-btn:hover,.hero-btn:hover{background:transparent;color:var(--gold)}
+.menu{display:none;color:var(--gold);font-size:24px}
+
+.hero{min-height:100svh;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-media{position:absolute;inset:0;background:
+linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.66) 42%,rgba(0,0,0,.18) 100%),
+linear-gradient(0deg,rgba(0,0,0,.62),transparent 45%),
+url("https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=2200&q=85") center/cover}
+.hero-media video{position:absolute;width:100%;height:100%;object-fit:cover;opacity:.48;mix-blend-mode:screen}
+.hero-content{position:relative;z-index:2;padding-top:85px;max-width:730px}
+.eyebrow{color:var(--gold);font-size:10px;letter-spacing:5px;font-weight:600;margin-bottom:20px}
+h1{font:500 clamp(60px,9vw,116px)/.82 "Cormorant Garamond",serif;letter-spacing:-3px}
+h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(245,242,235,.7)}
+.hero-copy{color:#d0cec8;max-width:570px;line-height:1.8;font-size:15px;margin:30px 0}
+.hero-actions{display:flex;gap:13px;align-items:center;flex-wrap:wrap}
+.hero-btn.alt{background:transparent;color:var(--cream);border-color:rgba(255,255,255,.38)}
+.hero-btn.alt:hover{border-color:var(--gold);color:var(--gold)}
+.hero-meta{display:flex;gap:35px;margin-top:52px}
+.hero-meta strong{display:block;font:28px "Cormorant Garamond";color:var(--gold)}
+.hero-meta small{font-size:9px;letter-spacing:2px;color:#999}
+.vertical{position:absolute;right:28px;bottom:42px;z-index:3;writing-mode:vertical-rl;font-size:9px;letter-spacing:4px;color:#aaa}
+
+section{padding:120px 0}
+.section-top{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:55px}
+.kicker{color:var(--gold);font-size:9px;letter-spacing:4px;font-weight:600}
+h2{font:500 clamp(45px,6vw,72px)/.9 "Cormorant Garamond";margin-top:12px}
+.section-intro{max-width:420px;color:#92908b;line-height:1.8;font-size:13px}
+
+.intro{background:#080808}
+.intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:90px;align-items:center}
+.photo-frame{height:580px;position:relative;background:url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85") center/cover}
+.photo-frame:after{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.42)}
+.photo-label{position:absolute;z-index:2;bottom:30px;left:30px;background:rgba(0,0,0,.72);padding:13px 18px;font-size:9px;letter-spacing:3px}
+.intro-copy p{color:#aaa;line-height:1.95;font-size:14px;margin:23px 0}
+.signature{font:italic 30px "Cormorant Garamond";color:var(--gold);margin-top:28px}
+
+.services{background:#050505}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.service{background:#080808;padding:38px 31px;min-height:220px;transition:.35s}
+.service:hover{background:#111;transform:translateY(-5px)}
+.service-num{font:18px "Cormorant Garamond";color:var(--gold)}
+.service h3{font:29px "Cormorant Garamond";font-weight:500;margin:25px 0 10px}
+.service p{color:#8f8d88;font-size:12px;line-height:1.7}
+.service .arrow{display:block;margin-top:25px;color:#777;font-size:13px}
+
+.showcase{background:#0a0a0a}
+.gallery{display:grid;grid-template-columns:1.25fr .75fr .75fr;grid-template-rows:250px 250px;gap:12px}
+.g{position:relative;overflow:hidden;background:#161616}
+.g:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.68),transparent 55%);z-index:1}
+.g img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.g:hover img{transform:scale(1.06)}
+.g:nth-child(1){grid-row:span 2}
+.g:nth-child(4){grid-column:span 2}
+.g span{position:absolute;z-index:2;left:18px;bottom:18px;font-size:9px;letter-spacing:3px}
+
+.testimonials{background:#050505}
+.rating{text-align:center;border:1px solid var(--line);padding:50px;margin-bottom:22px}
+.rating-number{font:74px "Cormorant Garamond";color:var(--gold)}
+.stars{letter-spacing:5px;font-size:12px;margin:5px 0 10px}
+.rating p{color:#888;font-size:11px;letter-spacing:2px}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.review{background:#0b0b0b;border:1px solid var(--line);padding:30px}
+.review .stars{color:var(--gold)}
+.review p{color:#aaa;line-height:1.85;font-size:13px}
+.review b{display:block;margin-top:23px;font-size:10px;letter-spacing:2px;color:#ddd}
+
+.booking{position:relative;text-align:center;overflow:hidden;background:
+radial-gradient(circle at 50% 0%,rgba(255,255,255,.15),transparent 30%),#0a0a0a}
+.booking h2{font-size:clamp(50px,7vw,88px)}
+.booking p{color:#999;margin:22px auto 30px;max-width:520px;line-height:1.8;font-size:13px}
+
+.contact{background:#080808}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.contact-box{border:1px solid var(--line);padding:35px;min-height:230px}
+.contact-box h3{font:30px "Cormorant Garamond";margin-bottom:20px}
+.contact-box p{color:#999;font-size:13px;line-height:2}
+.gold{color:var(--gold)}
+
+footer{border-top:1px solid var(--line);padding:30px 0;color:#6f6e6a;font-size:10px;letter-spacing:1px}
+.footer{display:flex;justify-content:space-between;gap:20px}
+
+@media(max-width:850px){
+ nav{display:none}.menu{display:block}.nav-btn{display:none}
+ .hero-content{padding-top:120px}.vertical{display:none}
+ .intro-grid{grid-template-columns:1fr;gap:45px}.photo-frame{height:450px}
+ .section-top{display:block}.section-intro{margin-top:20px}
+ .service-grid,.review-grid{grid-template-columns:1fr}
+ .gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px}
+ .g:nth-child(1){grid-row:span 1}.g:nth-child(4){grid-column:span 1}
+ .contact-grid{grid-template-columns:1fr}.footer{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="top-glow"></div>
+
+<header>
+<div class="container nav">
+  <a class="brand" href="#home">HONEY BLONDE<small>HAIR COMPANY</small></a>
+  <nav>
+    <a href="#about">ABOUT</a><a href="#services">SERVICES</a><a href="#gallery">GALLERY</a><a href="#reviews">REVIEWS</a><a href="#contact">CONTACT</a>
+  </nav>
+  <a class="nav-btn" href="tel:+17655754500">BOOK APPOINTMENT</a>
+  <div class="menu">☰</div>
+</div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-media">
+    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=2200&q=85">
+      <source src="https://cdn.coverr.co/videos/coverr-woman-having-her-hair-done-1577/1080p.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">NEW CASTLE · INDIANA</div>
+      <h1>Beauty<br><span>in every strand.</span></h1>
+      <p class="hero-copy">A refined salon experience for beautiful hair, effortless confidence and a little time to feel completely yourself.</p>
+      <div class="hero-actions">
+        <a class="hero-btn" href="tel:+17655754500">BOOK YOUR VISIT</a>
+        <a class="hero-btn alt" href="#services">EXPLORE SERVICES</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>4.8</strong><small>GOOGLE RATING</small></div>
+        <div><strong>134+</strong><small>CLIENT REVIEWS</small></div>
+        <div><strong>01</strong><small>NEW CASTLE, IN</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="vertical">THE HONEY BLONDE EXPERIENCE</div>
+</section>
+
+<section class="intro" id="about">
+<div class="container intro-grid">
+  <div class="photo-frame"><div class="photo-label">THE SALON · NEW CASTLE</div></div>
+  <div class="intro-copy">
+    <div class="kicker">WELCOME TO HONEY BLONDE</div>
+    <h2>More than<br>a hair appointment.</h2>
+    <p>At The Honey Blonde Hair Company, every visit is designed to feel welcoming, professional and personal. Our team believes great hair starts with listening — then creating a look that feels right for you.</p>
+    <p>From a fresh cut to beautiful blonde work, color, styling and lashes, we're here for the details that make you feel your best.</p>
+    <div class="signature">Honey Blonde Hair Company</div>
+  </div>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="container">
+  <div class="section-top">
+    <div><div class="kicker">THE MENU</div><h2>Signature Services</h2></div>
+    <p class="section-intro">Thoughtful beauty services, tailored to your hair goals and finished with the care you deserve.</p>
+  </div>
+  <div class="service-grid">
+    <article class="service"><div class="service-num">01</div><h3>Haircuts & Styling</h3><p>Fresh cuts and polished styling created around your face shape, lifestyle and personal style.</p><span class="arrow">DISCOVER →</span></article>
+    <article class="service"><div class="service-num">02</div><h3>Blonde & Color</h3><p>Beautiful, dimensional color with a focus on creating tones that complement your look.</p><span class="arrow">DISCOVER →</span></article>
+    <article class="service"><div class="service-num">03</div><h3>Highlights</h3><p>Bright, seamless dimension designed to give your hair a natural and elevated finish.</p><span class="arrow">DISCOVER →</span></article>
+    <article class="service"><div class="service-num">04</div><h3>Lash Services</h3><p>Professional lash services to complete your beauty routine and make your eyes stand out.</p><span class="arrow">DISCOVER →</span></article>
+    <article class="service"><div class="service-num">05</div><h3>Special Styling</h3><p>Elegant styling for celebrations, vacations, photos and all the moments worth remembering.</p><span class="arrow">DISCOVER →</span></article>
+    <article class="service"><div class="service-num">06</div><h3>Consultations</h3><p>Not sure what you need? Start with a conversation about your goals, maintenance and ideal look.</p><span class="arrow">DISCOVER →</span></article>
+  </div>
+</div>
+</section>
+
+<section class="showcase" id="gallery">
+<div class="container">
+  <div class="section-top">
+    <div><div class="kicker">THE LOOK</div><h2>Salon Gallery</h2></div>
+    <p class="section-intro">A visual moodboard for the Honey Blonde experience. Replace these demo images with the salon's approved work photos.</p>
+  </div>
+  <div class="gallery">
+    <div class="g"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=85"><span>THE HONEY BLONDE LOOK</span></div>
+    <div class="g"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85"><span>BLONDE</span></div>
+    <div class="g"><img src="https://images.unsplash.com/photo-1560869713-da86a9ec7d15?auto=format&fit=crop&w=900&q=85"><span>STYLING</span></div>
+    <div class="g"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1200&q=85"><span>BEAUTY DETAILS</span></div>
+    <div class="g"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=85"><span>SALON EXPERIENCE</span></div>
+  </div>
+</div>
+</section>
+
+<section class="testimonials" id="reviews">
+<div class="container">
+  <div class="section-top">
+    <div><div class="kicker">CLIENT LOVE</div><h2>What guests say.</h2></div>
+    <p class="section-intro">Real feedback highlighted from the salon's Google listing.</p>
+  </div>
+  <div class="rating"><div class="rating-number">4.8</div><div class="stars">★★★★★</div><p>134 GOOGLE REVIEWS</p></div>
+  <div class="review-grid">
+    <article class="review"><div class="stars">★★★★★</div><p>“Everyone at the Honey Blonde Hair Company is very welcoming and professional. Very easy to communicate with. I will never go to another salon!”</p><b>LAUREN C.</b></article>
+    <article class="review"><div class="stars">★★★★★</div><p>“I've gotten my hair cut here at least three times now and they have gotten it right every time! Their pricing is totally reasonable and all the ladies are so nice.”</p><b>KELLEY W.</b></article>
+    <article class="review"><div class="stars">★★★★★</div><p>“The place is amazing. Love the location, the atmosphere and all the amazing ladies that work there. They seriously made me feel like I had a spa day.”</p><b>SYDNEY</b></article>
+  </div>
+</div>
+</section>
+
+<section class="booking">
+<div class="container">
+  <div class="kicker">YOUR NEXT LOOK STARTS HERE</div>
+  <h2>Let's make it beautiful.</h2>
+  <p>Ready for your next haircut, color, blonde transformation or beauty service?</p>
+  <a class="hero-btn" href="tel:+17655754500">CALL 765-575-4500</a>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container">
+  <div class="section-top"><div><div class="kicker">COME SEE US</div><h2>Visit the salon.</h2></div><p class="section-intro">Located on Broad Street in New Castle, Indiana.</p></div>
+  <div class="contact-grid">
+    <div class="contact-box"><h3>Honey Blonde Hair Company</h3><p><strong>1106 Broad St</strong><br>New Castle, IN 47362<br>United States</p><p><a class="gold" href="tel:+17655754500">+1 765-575-4500</a></p></div>
+    <div class="contact-box"><h3>Book your visit</h3><p>Call the salon to ask about availability, services and your next appointment.</p><br><a class="hero-btn" href="tel:+17655754500">CONTACT THE SALON</a></div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer">
+  <div>© 2026 THE HONEY BLONDE HAIR COMPANY</div>
+  <div>1106 BROAD ST · NEW CASTLE, INDIANA</div>
+</div>
+</footer>
+</body>
+</html>
